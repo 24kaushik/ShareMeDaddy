@@ -1,0 +1,25 @@
+{
+  "name": "share-me-daddy",
+  "version": "1.0.0",
+  "description": "Local file sharing made easy! Fast. Furious. Father-approved.",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "node --watch src/index.js",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/24kaushik/ShareMeDaddy.git"
+  },
+  "author": "Kaushik Sarkar",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/24kaushik/ShareMeDaddy/issues"
+  },
+  "homepage": "https://github.com/24kaushik/ShareMeDaddy#readme",
+  "dependencies": {
+    "archiver": "^7.0.1",
+    "express": "^5.1.0",
+    "serve-index": "^1.9.1"
+  }
+}

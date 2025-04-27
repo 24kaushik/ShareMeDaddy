@@ -74,4 +74,4 @@ Do whatever you want — just don't blame daddy when things go wrong.
 
 ---
 
-<center><b>❤️ Made with questionable judgement and Node.js, React.js by Kaushik Sarkar. ❤️</b></center>
+<center><b>❤️ Made with questionable judgement and Node.js by Kaushik Sarkar. ❤️</b></center>
