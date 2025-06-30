@@ -1,6 +1,6 @@
 # Custom
-src/shared/*
-!src/shared/.gitkeep
+/shared/*
+!/shared/.gitkeep
 
 # Logs
 logs
