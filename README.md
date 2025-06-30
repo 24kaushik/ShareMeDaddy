@@ -22,8 +22,8 @@ Make sure you have **Node.js** installed.
 Then in your terminal:
 
 ```bash
-git clone https://github.com/24kaushik/share-me-daddy.git
-cd share-me-daddy
+git clone https://github.com/24kaushik/ShareMeDaddy.git
+cd ShareMeDaddy
 npm install
 ```
 
@@ -39,7 +39,7 @@ node server.js
 ```
 
 3. Open the link shown in the terminal on any device in your network.  
-   Example: `http://192.168.1.42:3000/files`
+   Example: `http://192.168.1.42:3000/`
 
 4. Browse and download as much as your heart desires.
 
@@ -59,7 +59,6 @@ You can edit `server.js` to:
 
 ## Planned Features
 
-- 📱 Generate a QR code for easier phone access.
 - 🔐 Add optional password protection for sensitive files.
 - 📂 Select folders dynamically without needing to move files.
 - 🎨 Prettier front-end interface.

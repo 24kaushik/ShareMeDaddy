@@ -6,7 +6,8 @@ const router = express.Router();
 
 const sharedFolder = path.join(__dirname, "..", "shared");
 
-router.get("/folder/:folder", (req, res) => {
+// Download folder as a zip file
+router.get("/dir/:folder", (req, res) => {
   const folderPath = path.join(sharedFolder, req.params.folder);
   fs.stat(folderPath, (err, stats) => {
     if (err || !stats.isDirectory())
@@ -19,16 +20,16 @@ router.get("/folder/:folder", (req, res) => {
     );
     const archive = archiver("zip", { zlib: { level: 9 } });
     archive.pipe(res);
-    archive.directory(folderPath, true);
+    archive.directory(folderPath, false);
     archive.finalize();
   });
 });
 
+// Download individual file
 router.get("/file/:file", (req, res) => {
   const filePath = path.join(sharedFolder, req.params.file);
   fs.stat(filePath, (err, stats) => {
-    if (err || !stats.isFile())
-      return res.status(404).send("File not found.");
+    if (err || !stats.isFile()) return res.status(404).send("File not found.");
 
     res.download(filePath);
   });

@@ -32,15 +32,8 @@ router.get("/", (req, res) => {
       .join("");
 
     // Send the HTML response with the file links
-    res.send(
-      layout(
-        "Share Me Daddy",
-        `${fileLinks}`
-      )
-    );
+    res.send(layout("Share Me Daddy", `${fileLinks}`));
   });
 });
-
-
 
 module.exports = router;
