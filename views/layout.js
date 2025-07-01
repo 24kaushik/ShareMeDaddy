@@ -17,10 +17,30 @@ module.exports = function layout(title, files) {
       </button>
       <div class="qrCode hidden">
         <h2>Scan me!</h2>
-        <img src="https://api.qrserver.com/v1/create-qr-code/?data=http://${localIP}:3000&size=200x200" alt="QR Code">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?data=http://${localIP}:${require("../constants").PORT || 3000}&size=200x200" alt="QR Code">
       </div>
       <h1>Share Me Daddy</h1>
       <p>Pick your file, baby.</p>
+      
+      <div class="upload-container-wrapper">
+        <div class="cute-upload-container">
+          <label for="fileInput" class="cute-upload">
+            <div class="upload-icon">📄</div>
+            <div class="upload-text">Upload your cutie files here</div>
+            <input type="file" id="fileInput" multiple class="hidden-input">
+          </label>
+          <div class="drag-hint">or drag & drop files here</div>
+        </div>
+        
+        <div class="cute-upload-container">
+          <label for="folderInput" class="cute-upload">
+            <div class="upload-icon">📂</div>
+            <div class="upload-text">Upload your cutie folders here</div>
+            <input type="file" id="folderInput" webkitdirectory directory multiple class="hidden-input">
+          </label>
+          <div class="drag-hint">or drag & drop folders here</div>
+        </div>
+      </div>
 
       <div class="file-list" id="fileList">
         ${files}
@@ -35,7 +55,7 @@ module.exports = function layout(title, files) {
           <a href="https://github.com/24kaushik/ShareMeDaddy?tab=MIT-1-ov-file" target="_blank">License</a>
         </div>
       </footer>
-
+      <script src="/script.js"></script>
     </body>
     </html>
   `;

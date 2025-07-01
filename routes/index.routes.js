@@ -24,9 +24,27 @@ router.get("/", (req, res) => {
         const fileIcon = "📄";
 
         if (isDirectory) {
-          return `<div class="file-item folder">${folderIcon} <a href="/download/dir/${file}">${file} (Download Zipped)</a></div>`;
+          return `<div class="file-item">
+                    <div class="file-info">
+                      <span>${folderIcon}</span>
+                      <a href="/download/folder/${file}">${file} (Download Zipped)</a>
+                    </div>
+                    <div>
+                    <a href="/download/folder/${file}"><button class="download-button">Download</button></a>
+                    <button class="delete-button" onclick="deleteFolder('${file}')">Delete</button>
+                    </div>
+                  </div>`;
         } else {
-          return `<div class="file-item">${fileIcon} <a href="/download/file/${file}">${file}</a></div>`;
+          return `<div class="file-item">
+                  <div class="file-info">
+                    <span>${fileIcon}</span>
+                    <a href="/download/file/${file}">${file}</a>
+                  </div>
+                  <div>
+                    <a href="/download/file/${file}"><button class="download-button">Download</button></a>
+                    <button class="delete-button" onclick="deleteFile('${file}')">Delete</button>
+                  </div>
+                  </div>`;
         }
       })
       .join("");
